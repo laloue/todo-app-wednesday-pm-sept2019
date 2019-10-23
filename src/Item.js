@@ -6,14 +6,17 @@ class Item extends React.Component {
     return (
       <div className="row">
         <div className="col-2">
-          <p className={this.props.completed && "completed"}>
+          <p className={this.props.completed? "completed":""}>
             {this.props.text}
           </p>
         </div>
         <div className="col-1">
-          <button className="btn btn-info" disabled={this.props.completed}>
+          {this.props.completed ===false && (
+          <button className="btn btn-info">
             Done
           </button>
+          )}
+
         </div>
         <div className="col-1">
           <button className="btn btn-danger">Delete</button>
